@@ -1,0 +1,28 @@
+:root {
+  --primary-color: #FC0C70; /* Rosa */
+  --secondary-color: #f0f0f0; /* Cinza claro */
+  --text-color: #333333; /* Texto escuro */
+  --font-size: 16px;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+}
+
+/* Layout geral */
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+}
