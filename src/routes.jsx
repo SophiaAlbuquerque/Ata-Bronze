@@ -5,14 +5,14 @@ import Gallery from "./pages/gallery";
 
 function AppRoutes() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="/produtos" element={<Gallery />} />
+          <Route path="produtos" element={<Gallery />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
