@@ -17,12 +17,13 @@ html, body {
   width: 100%;
   font-family: 'Arial', sans-serif;
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 /* Layout geral */
 main {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 }

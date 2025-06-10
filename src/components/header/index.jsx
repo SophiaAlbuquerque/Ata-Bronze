@@ -1,11 +1,20 @@
+import { useState } from 'react'
 import styles from './header.module.css'
-import { FaSearch, FaUser, FaShoppingCart } from 'react-icons/fa'
+import { FaSearch, FaUser, FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa'
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const toggleMenu = () => setMenuOpen(prev => !prev)
+
   return (
     <header className={styles.header}>
       <div className={styles["top-bar"]}>
-        <img src="/logo-alt.svg" alt="Logo" className={styles.logo}/>
+        <img src="/logo-alt.svg" alt="Logo" className={styles.logo} />
+
+        <button className={styles.menuButton} onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
 
         <div className={styles["search-container"]}>
           <input type="text" placeholder="Buscar produtos..." />
@@ -20,14 +29,24 @@ function Header() {
         </div>
       </div>
 
-      <nav className={styles["nav-bar"]}>
+      <nav className={`${styles["nav-bar"]} ${menuOpen ? styles.show : ''}`}>
         <ul>
-          <li className={styles.active}>PÁGINA INICIAL</li>
-          <li>BRONZEAMENTO</li>
-          <li>COSMÉTICOS</li>
-          <li>CÍLIOS</li>
-          <li>LINHA DE CABELO</li>
-          <li>MAQUIAGEM</li>
+          {[
+            'PÁGINA INICIAL',
+            'BRONZEAMENTO',
+            'COSMÉTICOS',
+            'CÍLIOS',
+            'LINHA DE CABELO',
+            'MAQUIAGEM'
+          ].map((item, index) => (
+            <li
+              key={index}
+              className={index === 0 ? styles.active : ''}
+              onClick={() => setMenuOpen(false)}
+            >
+              {item}
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
