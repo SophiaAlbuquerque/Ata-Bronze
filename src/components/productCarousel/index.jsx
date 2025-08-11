@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./ProductCarousel.module.css";
 
 const ProductCarousel = ({ products, sectionTitle }) => {
@@ -45,15 +46,21 @@ const ProductCarousel = ({ products, sectionTitle }) => {
         )}
         <div className={styles.carouselTrack} ref={scrollRef}>
           {products.map((p, i) => (
-            <div className={styles.card} key={i}>
-              {p.discount && <span className={styles.discount}>-{p.discount}%</span>}
-              <img src={p.image} alt={p.title} className={styles.image} />
-              <div className={styles.info}>
-                <h3 className={styles.title}>{p.title}</h3>
-                <p className={styles.price}>R$ {p.price}</p>
-                {p.freeShipping && <span className={styles.freeShipping}>Frete grátis</span>}
+            <Link
+              to={`/produto/${p.id}`}
+              key={i}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <div className={styles.card}>
+                {p.discount && <span className={styles.discount}>-{p.discount}%</span>}
+                <img src={p.image} alt={p.title} className={styles.image} />
+                <div className={styles.info}>
+                  <h3 className={styles.title}>{p.title}</h3>
+                  <p className={styles.price}>R$ {p.price}</p>
+                  {p.freeShipping && <span className={styles.freeShipping}>Frete grátis</span>}
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         {canScrollRight && (
