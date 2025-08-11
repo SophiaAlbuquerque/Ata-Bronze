@@ -7,7 +7,7 @@ import ProductDetailsPage from './pages/ProductDetailsPage'
 
 function AppRoutes() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
