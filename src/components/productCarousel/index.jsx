@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import styles from "./ProductCarousel.module.css";
+import styles from "./productCarousel.module.css";
 
 const ProductCarousel = ({ products, sectionTitle }) => {
   const scrollRef = useRef();
