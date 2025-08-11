@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Footer.module.css";
+import styles from "./footer.module.css";
 import { FaFacebook, FaInstagram, FaYoutube, FaCcVisa, FaCcMastercard, FaCcAmex, FaPaypal } from "react-icons/fa";
 import { SiMercadopago, SiPagseguro } from "react-icons/si";
 import { PiBarcodeThin } from "react-icons/pi";
