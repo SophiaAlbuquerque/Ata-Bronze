@@ -26,7 +26,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles["top-bar"]}>
         <img
-          src={`${import.meta.env.BASE_URL}logo-alt.svg`}
+          src={`${import.meta.env.BASE_URL}logo.svg`}
           alt="Logo"
           className={styles.logo}
         />
